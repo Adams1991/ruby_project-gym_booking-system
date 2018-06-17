@@ -37,6 +37,24 @@ attr_reader(:id, :boxer_id, :fitness_class_id)
     return results.map { |hash| Booking.new( hash ) }
   end
 
+  def boxer()
+    sql = "SELECT *
+    FROM boxers
+    WHERE id = $1"
+    values = [@boxer_id]
+    boxer = SqlRunner.run(sql, values).first
+    return Boxer.new(boxer)
+  end
+
+  def fitness_class()
+    sql = "SELECT *
+    FROM fitness_classes
+    WHERE id = $1"
+    values = [@fitness_class_id]
+    fitness_class = SqlRunner.run(sql, values).first
+    return FitnessClass.new(fitness_class)
+  end
+
   def self.find( id )
     sql = "SELECT * FROM bookings
     WHERE id = $1"
