@@ -24,6 +24,11 @@ class TestBoxer < MiniTest::Test
     assert_equal(1, result)
   end
 
+  def test_full_name
+    result = @boxer.full_name()
+    assert_equal("John Adams", result)
+  end
+
 
 
 end
