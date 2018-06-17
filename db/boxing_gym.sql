@@ -1,4 +1,4 @@
--- DROP TABLE bookings;
+DROP TABLE bookings;
 DROP TABLE fitness_classes;
 DROP TABLE boxers;
 
@@ -15,9 +15,9 @@ CREATE TABLE boxers
   name VARCHAR(255) not null
 );
 
--- CREATE TABLE bookings
--- (
---   id SERIAL8 primary key,
---   boxer_id INT8,
---   fitness_class_id INT8
--- );
+CREATE TABLE bookings
+(
+  id SERIAL8 primary key,
+  boxer_id INT8 references boxers(id),
+  fitness_class_id INT8 references fitness_classes(id)
+);
