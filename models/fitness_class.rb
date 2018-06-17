@@ -24,6 +24,14 @@ attr_reader(:id, :name)
     @id = results.first()['id'].to_i
   end
 
+  def update()
+    sql = "UPDATE fitness_classes
+    SET name = $1
+    WHERE id = $2"
+    values = [@name, @id]
+    SqlRunner.run(sql, values)
+  end
+
   def self.delete_all
     sql = "DELETE FROM fitness_classes"
     SqlRunner.run( sql )
