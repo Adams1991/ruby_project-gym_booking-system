@@ -5,14 +5,14 @@ DROP TABLE boxers;
 CREATE TABLE fitness_classes
 (
   id SERIAL8 primary key,
-  name VARCHAR(255) not null,
-  start_time INT4
+  name VARCHAR(255) not null
 );
 
 CREATE TABLE boxers
 (
   id SERIAL8 primary key,
-  name VARCHAR(255) not null
+  first_name VARCHAR(255) not null,
+  last_name VARCHAR(255) not null
 );
 
 CREATE TABLE bookings
