@@ -9,5 +9,10 @@ class TestFitnessClass < MiniTest::Test
     @fitness_class = FitnessClass.new(options)
   end
 
+  def test_name()
+    result = @fitness_class.name()
+    assert_equal("General Fitness", result)
+  end
+
 
 end
