@@ -19,3 +19,10 @@ get '/boxers/:id' do
   @boxer = Boxer.find(params['id'].to_i)
   erb(:"boxers/show")
 end
+
+#CREATE
+post('/boxers') do
+  @boxer = Boxer.new(params)
+  @boxer.save()
+  erb ( :"boxers/create" )
+end
