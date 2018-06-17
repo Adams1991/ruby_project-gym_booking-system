@@ -29,4 +29,18 @@ attr_reader(:id, :name)
     SqlRunner.run( sql )
   end
 
+  def self.all()
+    sql = "SELECT * FROM fitness_classes"
+    results = SqlRunner.run( sql )
+    return results.map { |hash| FitnessClass.new( hash ) }
+  end
+
+  def self.find( id )
+    sql = "SELECT * FROM fitness_classes
+    WHERE id = $1"
+    values = [id]
+    results = SqlRunner.run( sql, values )
+    return FitnessClass.new( results.first )
+  end
+
 end
