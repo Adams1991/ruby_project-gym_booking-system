@@ -30,4 +30,9 @@ attr_reader(:id, :first_name, :last_name)
     @id = results.first()['id'].to_i
   end
 
+  def self.delete_all
+    sql = "DELETE FROM boxers"
+    SqlRunner.run( sql )
+  end
+
 end
