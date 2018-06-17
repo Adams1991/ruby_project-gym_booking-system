@@ -10,6 +10,26 @@ attr_reader(:id, :boxer_id, :fitness_class_id)
     @fitness_class_id = options['fitness_class_id']
   end
 
+  def save()
+    sql = "INSERT INTO bookings
+    (
+      boxer_id,
+      fitness_class_id
+    )
+    VALUES
+    (
+      $1, $2
+    )
+    RETURNING id"
+    values = [@boxer_id, @fitness_class_id]
+    results = SqlRunner.run(sql, values)
+    @id = results.first()['id'].to_i
+  end
+
+  def self.delete_all
+    sql = "DELETE FROM bookings"
+    SqlRunner.run( sql )
+  end
 
 
 end
