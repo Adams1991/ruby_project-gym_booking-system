@@ -14,5 +14,15 @@ class TestFitnessClass < MiniTest::Test
     assert_equal("General Fitness", result)
   end
 
+  def test_id()
+    result = @fitness_class.id()
+    assert_equal(1, result)
+  end
+
+  def test_start_time()
+    result = @fitness_class.start_time()
+    assert_equal("19:00", result)
+  end
+
 
 end
