@@ -19,7 +19,12 @@ fitness_class1 = FitnessClass.new({
   "name" => "Beginners Fitness"
 })
 
+fitness_class2 = FitnessClass.new({
+  "name" => "Advance Fitness"
+})
+
 fitness_class1.save()
+fitness_class2.save()
 
 booking1 = Booking.new({
   "boxer_id" => boxer1.id(),
@@ -27,7 +32,14 @@ booking1 = Booking.new({
 
   })
 
+booking2 = Booking.new({
+  "boxer_id" => boxer1.id(),
+  "fitness_class_id" => fitness_class2.id()
+
+  })
+
 booking1.save()
+booking2.save()
 
 binding.pry
 nil

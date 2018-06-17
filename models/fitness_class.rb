@@ -43,4 +43,9 @@ attr_reader(:id, :name)
     return FitnessClass.new( results.first )
   end
 
+  def self.map_items(fitness_class_data)
+    result = fitness_class_data.map { |fitness_class| FitnessClass.new(fitness_class) }
+    return result
+  end
+
 end
