@@ -35,4 +35,18 @@ attr_reader(:id, :first_name, :last_name)
     SqlRunner.run( sql )
   end
 
+  def self.all()
+    sql = "SELECT * FROM boxers"
+    results = SqlRunner.run( sql )
+    return results.map { |hash| Boxer.new( hash ) }
+  end
+
+  def self.find( id )
+    sql = "SELECT * FROM boxers
+    WHERE id = $1"
+    values = [id]
+    results = SqlRunner.run( sql, values )
+    return Boxer.new( results.first )
+  end
+
 end
