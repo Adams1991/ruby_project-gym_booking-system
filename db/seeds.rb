@@ -12,5 +12,11 @@ boxer1 = Boxer.new({
 
 boxer1.save()
 
+fitness_class1 = FitnessClass.new({
+  "name" => "Beginners Fitness"
+})
+
+fitness_class1.save()
+
 binding.pry
 nil
