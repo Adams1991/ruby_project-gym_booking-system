@@ -43,6 +43,17 @@ attr_reader(:id, :name)
     return FitnessClass.new( results.first )
   end
 
+  def boxers()
+    sql = "SELECT boxers.*
+    FROM boxers
+    INNER JOIN bookings
+    ON bookings.boxer_id = boxers.id
+    WHERE fitness_class_id = $1"
+    values = [@id]
+    boxer_data = SqlRunner.run(sql, values)
+    return Boxer.map_items(boxer_data)
+  end
+
   def self.map_items(fitness_class_data)
     result = fitness_class_data.map { |fitness_class| FitnessClass.new(fitness_class) }
     return result

@@ -60,6 +60,9 @@ attr_reader(:id, :first_name, :last_name)
     return FitnessClass.map_items(fitness_class_data)
   end
 
-  
+  def self.map_items(boxer_data)
+    result = boxer_data.map { |boxer| Boxer.new(boxer) }
+    return result
+  end
 
 end
