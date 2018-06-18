@@ -22,11 +22,13 @@ boxer1.save()
 boxer2.save()
 
 fitness_class1 = FitnessClass.new({
-  "name" => "Beginners Fitness"
+  "name" => "Beginners Fitness",
+  "capacity" => 34
 })
 
 fitness_class2 = FitnessClass.new({
-  "name" => "Advance Fitness"
+  "name" => "Advance Fitness",
+  "capacity" => 1
 })
 
 fitness_class1.save()
