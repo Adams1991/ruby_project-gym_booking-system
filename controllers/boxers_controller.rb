@@ -26,3 +26,23 @@ post('/boxers') do
   @boxer.save()
   erb ( :"boxers/create" )
 end
+
+# DELETE
+post('/boxers/:id/delete') do
+  boxer = Boxer.find(params[:id].to_i)
+  boxer.delete()
+  erb( :"boxers/destroy" )
+end
+
+# EDIT
+get('/boxers/:id/edit') do
+  @boxer = Boxer.find(params[:id].to_i)
+  erb( :"boxers/edit" )
+end
+
+#UPDATE
+post('/boxers/:id') do
+  @boxer = Boxer.new(params)
+  @boxer.update()
+  erb( :"update/update" )
+end
