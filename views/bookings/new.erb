@@ -1,0 +1,12 @@
+<form action="/boxers/:id/add_to_class'" method="post">
+  <label>
+  Select a class:
+    <select name="fitness_class_id">
+      <% for fitness_class in @fitness_classes %>
+      <option value="<%= fitness_class.id() %>"><%= fitness_class.name %></option>
+      <% end %>
+    </select>
+  </label>
+
+  <input class="btn btn--action" type='submit' value="Add Class">
+</form>

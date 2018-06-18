@@ -1,4 +1,5 @@
-<% for boxer in @boxers %>
-  <p>Name: <%= boxer.full_name() %> </p>
+<% for booking in @bookings %>
+  <p>Boxer Detail: <%= booking.boxer().full_name() %> </p>
+  <p>Class Detail: <%= booking.fitness_class().name() %> </p>
   <hr />
 <% end %>
