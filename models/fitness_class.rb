@@ -1,4 +1,6 @@
 require_relative('../db/sql_runner')
+require_relative('./booking')
+require_relative('./fitness_class')
 
 class FitnessClass
 
@@ -69,6 +71,11 @@ attr_accessor(:id, :name)
     boxer_data = SqlRunner.run(sql, values)
     return Boxer.map_items(boxer_data)
   end
+
+  def add_member(boxer)
+    Booking.new('fitness_class_id' => @id, "boxer_id" => boxer.id ).save()
+  end
+
 
   def self.map_items(fitness_class_data)
     result = fitness_class_data.map { |fitness_class| FitnessClass.new(fitness_class) }
