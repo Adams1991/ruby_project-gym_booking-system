@@ -18,6 +18,12 @@ get('/bookings/new') do
   erb( :"bookings/new" )
 end
 
+#SHOW
+get('/bookings/:id') do
+  @booking = Booking.find(params['id'].to_i)
+  erb(:"booking/show")
+end
+
 #CREATE
 post('/bookings') do
   @booking = Booking.new(params)

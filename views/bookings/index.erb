@@ -1,6 +1,6 @@
 <% for booking in @bookings %>
   <p>Boxer Detail: <%= booking.boxer().full_name() %> </p>
   <p>Class Detail: <%= booking.fitness_class().name() %> </p>
-  <p> <a href="/bookings/<%= booking.id()  %>/delete">Remove Boxer</a> </p>
+  <p> <a href="/bookings/<%= booking.id()  %>/delete">Remove Booking</a> </p>
   <hr />
 <% end %>

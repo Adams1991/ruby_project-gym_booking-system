@@ -42,6 +42,7 @@ attr_accessor(:id, :boxer_id, :fitness_class_id)
     SqlRunner.run( sql, values )
   end
 
+
   def self.delete_all
     sql = "DELETE FROM bookings"
     SqlRunner.run( sql )
@@ -77,6 +78,13 @@ attr_accessor(:id, :boxer_id, :fitness_class_id)
     values = [id]
     results = SqlRunner.run( sql, values )
     return Booking.new( results.first )
+  end
+
+  def self.delete_by_details(fitness_class_id, boxer_id )
+    sql = "DELETE FROM bookings
+    WHERE fitness_class_id = $1 AND boxer_id = $2"
+    values = [fitness_class_id, boxer_id]
+    results = SqlRunner.run( sql, values )
   end
 
 
