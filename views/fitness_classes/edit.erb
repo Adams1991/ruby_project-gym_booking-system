@@ -1,0 +1,9 @@
+<form method="post" action="/fitness_classes/<%= @fitness_class.id() %>">
+
+  <label for="name">Class Name:</label>
+  <input id="name" type="text" name="name" value="<%= @fitness_class.name  %>"/>
+
+
+  <input type="submit" value="Update Class Details">
+
+</form>

@@ -27,3 +27,23 @@ post('/fitness_classes') do
   @fitness_class.save()
   erb ( :"fitness_classes/create" )
 end
+
+# DELETE
+get('/fitness_classes/:id/delete') do
+  fitness_class = FitnessClass.find(params[:id].to_i)
+  fitness_class.delete()
+  erb( :"fitness_classes/destroy" )
+end
+
+# EDIT
+get('/fitness_classes/:id/edit') do
+  @fitness_class = FitnessClass.find(params[:id].to_i)
+  erb( :"fitness_classes/edit" )
+end
+
+#UPDATE
+post('/fitness_classes/:id') do
+  @fitness_class = FitnessClass.new(params)
+  @fitness_class.update()
+  erb( :"fitness_classes/update")
+end
