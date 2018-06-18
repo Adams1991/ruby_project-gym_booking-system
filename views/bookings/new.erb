@@ -1,4 +1,4 @@
-<form action="/boxers/:id/add_to_class'" method="post">
+<form action="/bookings" method="post">
   <label>
   Select a class:
     <select name="fitness_class_id">
@@ -8,5 +8,14 @@
     </select>
   </label>
 
-  <input class="btn btn--action" type='submit' value="Add Class">
+  <label>
+  Select a boxer:
+    <select name="boxer_id">
+      <% for boxer in @boxers %>
+      <option value="<%= boxer.id() %>"><%= boxer.full_name() %></option>
+      <% end %>
+    </select>
+  </label>
+
+  <input class="btn btn--action" type='submit' value="Add Booking">
 </form>
