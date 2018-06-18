@@ -44,5 +44,5 @@ end
 post('/boxers/:id') do
   @boxer = Boxer.new(params)
   @boxer.update()
-  erb( :"update/update" )
+  erb( :"boxers/update" )
 end
