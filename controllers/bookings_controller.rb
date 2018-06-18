@@ -37,3 +37,7 @@ get('/bookings/:id/delete') do
   booking.delete()
   erb( :"boxers/destroy" )
 end
+
+post('/bookings/:boxer_id/:fitness_class_id') do
+  Booking.delete_by_details(params[:boxer_id], params[:fitness_class_id])  
+end
