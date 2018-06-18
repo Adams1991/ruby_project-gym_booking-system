@@ -46,3 +46,5 @@ post('/boxers/:id') do
   @boxer.update()
   erb( :"boxers/update" )
 end
+
+#ADD CLASS

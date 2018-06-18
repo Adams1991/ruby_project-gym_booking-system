@@ -47,3 +47,10 @@ post('/fitness_classes/:id') do
   @fitness_class.update()
   erb( :"fitness_classes/update")
 end
+
+#BOXERS IN CLASS
+get('/fitness_classes/:id/boxers') do
+  @fitness_class = FitnessClass.find(params[:id].to_i)
+  @boxers = @fitness_class.boxers()
+  erb( :"fitness_classes/boxers" )
+end
