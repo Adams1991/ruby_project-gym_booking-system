@@ -5,7 +5,8 @@ DROP TABLE boxers;
 CREATE TABLE fitness_classes
 (
   id SERIAL8 primary key,
-  name VARCHAR(255) not null
+  name VARCHAR(255) not null,
+  capacity INT8
 );
 
 CREATE TABLE boxers
