@@ -28,7 +28,7 @@ post('/boxers') do
 end
 
 # DELETE
-post('/boxers/:id/delete') do
+get('/boxers/:id/delete') do
   boxer = Boxer.find(params[:id].to_i)
   boxer.delete()
   erb( :"boxers/destroy" )

@@ -2,7 +2,7 @@ require_relative('../db/sql_runner')
 
 class Booking
 
-attr_reader(:id, :boxer_id, :fitness_class_id)
+attr_accessor(:id, :boxer_id, :fitness_class_id)
 
   def initialize(options)
     @id = options['id'].to_i
@@ -32,6 +32,14 @@ attr_reader(:id, :boxer_id, :fitness_class_id)
     WHERE id = $3"
     values = [@boxer_id,@fitness_class_id, @id]
     SqlRunner.run(sql, values)
+  end
+
+  def delete()
+    sql = "DELETE
+    FROM bookings
+    WHERE id = $1"
+    values = [@id]
+    SqlRunner.run( sql, values )
   end
 
   def self.delete_all

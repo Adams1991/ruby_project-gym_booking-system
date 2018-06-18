@@ -2,7 +2,7 @@ require_relative('../db/sql_runner')
 
 class Boxer
 
-attr_reader(:id, :first_name, :last_name)
+attr_accessor(:id, :first_name, :last_name)
 
   def initialize(options)
     @id = options['id'].to_i
@@ -36,6 +36,14 @@ attr_reader(:id, :first_name, :last_name)
     WHERE id = $3"
     values = [@first_name,@last_name, @id]
     SqlRunner.run(sql, values)
+  end
+
+  def delete()
+    sql = "DELETE
+    FROM boxers
+    WHERE id = $1"
+    values = [@id]
+    SqlRunner.run( sql, values )
   end
 
   def self.delete_all

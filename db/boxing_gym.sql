@@ -18,6 +18,6 @@ CREATE TABLE boxers
 CREATE TABLE bookings
 (
   id SERIAL8 primary key,
-  boxer_id INT8 references boxers(id),
-  fitness_class_id INT8 references fitness_classes(id)
+  boxer_id INT8 references boxers(id) ON DELETE CASCADE,
+  fitness_class_id INT8 references fitness_classes(id) ON DELETE CASCADE
 );
