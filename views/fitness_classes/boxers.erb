@@ -1,6 +1,9 @@
 <% for boxer in @boxers %>
   <p>Name: <%= boxer.full_name() %> </p>
-  <p> <a href="/boxers/<%= boxer.id()  %>/edit">Edit Boxer Details</a> </p>
-  <p> <a href="/boxers/<%= boxer.id()  %>/delete">Remove Boxer</a> </p>
+  <form method="post" action='/bookings/<%=@fitness_class.id()%>/<%=boxer.id()%>'>
+
+    <input type="submit" value="Remove Booking">
+
+  </form>
   <hr />
 <% end %>
