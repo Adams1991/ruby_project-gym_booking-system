@@ -47,4 +47,9 @@ post('/boxers/:id') do
   erb( :"boxers/update" )
 end
 
-#ADD CLASS
+#CLASSES BOOKED
+get('/boxers/:id/fitness_classes') do
+  @boxer = Boxer.find(params[:id].to_i)
+  @fitness_classes = @boxer.fitness_classes()
+  erb( :"boxers/fitness_classes" )
+end
