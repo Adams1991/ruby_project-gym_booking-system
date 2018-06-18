@@ -4,7 +4,7 @@ require_relative("../fitness_class")
 class TestFitnessClass < MiniTest::Test
 
   def setup
-    options = {"id" => 1, "name" => "General Fitness"}
+    options = {"id" => 1, "name" => "General Fitness", "capacity" => 30}
 
     @fitness_class = FitnessClass.new(options)
   end
@@ -17,6 +17,11 @@ class TestFitnessClass < MiniTest::Test
   def test_id()
     result = @fitness_class.id()
     assert_equal(1, result)
+  end
+
+  def test_capacity()
+    result = @fitness_class.capacity()
+    assert_equal(30, result)
   end
 
 end

@@ -4,11 +4,12 @@ require_relative('./fitness_class')
 
 class FitnessClass
 
-attr_accessor(:id, :name)
+attr_accessor(:id, :name, :capacity)
 
   def initialize(options)
     @id = options['id'].to_i
     @name = options['name']
+    @capacity = options['capacity'].to_i
   end
 
   def save()
