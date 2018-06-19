@@ -4,12 +4,13 @@ require_relative('./fitness_class')
 
 class Boxer
 
-attr_accessor(:id, :first_name, :last_name)
+attr_accessor(:id, :first_name, :last_name, :premium_member)
 
   def initialize(options)
     @id = options['id'].to_i
     @first_name = options['first_name']
     @last_name = options['last_name']
+    @premium_member = options['premium_member']
   end
 
   def full_name()

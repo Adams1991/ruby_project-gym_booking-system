@@ -9,13 +9,15 @@ FitnessClass.delete_all()
 
 
 boxer1 = Boxer.new({
-  "first_name" => "Bob",
-  "last_name" => "Smith"
+  "first_name" => "Shannon",
+  "last_name" => "Smith",
+  "premium_member" => true
 })
 
 boxer2 = Boxer.new({
   "first_name" => "Bob",
-  "last_name" => "Smith"
+  "last_name" => "Smith",
+  "premium_member" => false
 })
 
 boxer1.save()
@@ -23,12 +25,16 @@ boxer2.save()
 
 fitness_class1 = FitnessClass.new({
   "name" => "Beginners Fitness",
-  "capacity" => 34
+  "capacity" => 34,
+  "duration" => "5pm - 7pm",
+  "premium_members" => true
 })
 
 fitness_class2 = FitnessClass.new({
   "name" => "Advance Fitness",
-  "capacity" => 0
+  "capacity" => 0,
+  "duration" => "4pm - 6pm",
+  "premium_members" => false
 })
 
 fitness_class1.save()
