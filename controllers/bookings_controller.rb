@@ -27,6 +27,9 @@ end
 #CREATE
 post('/bookings') do
   @booking = Booking.new(params)
+  @fitness_class = FitnessClass.find(@booking.fitness_class_id())
+  @fitness_class.reduce_capacity()
+  @fitness_class.update()
   @booking.save()
   erb ( :"bookings/create" )
 end
@@ -39,5 +42,5 @@ get('/bookings/:id/delete') do
 end
 
 post('/bookings/:boxer_id/:fitness_class_id') do
-  Booking.delete_by_details(params[:boxer_id], params[:fitness_class_id])  
+  Booking.delete_by_details(params[:boxer_id], params[:fitness_class_id])
 end
