@@ -82,6 +82,7 @@ attr_accessor(:id, :name, :capacity)
   end
 
   def add_member(boxer)
+    reduce_capacity()
     Booking.new('fitness_class_id' => @id, "boxer_id" => boxer.id ).save()
   end
 
@@ -92,7 +93,6 @@ attr_accessor(:id, :name, :capacity)
   def increase_capacity
     @capacity += 1
   end
-
 
   def self.map_items(fitness_class_data)
     result = fitness_class_data.map { |fitness_class| FitnessClass.new(fitness_class) }
