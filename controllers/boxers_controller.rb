@@ -11,6 +11,7 @@ end
 
 # NEW
 get('/boxers/new') do
+  @boxers = Boxer.all()
   erb( :"boxers/new" )
 end
 

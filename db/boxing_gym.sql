@@ -1,4 +1,5 @@
 DROP TABLE bookings;
+DROP TABLE trainers;
 DROP TABLE fitness_classes;
 DROP TABLE boxers;
 
@@ -11,12 +12,21 @@ CREATE TABLE fitness_classes
   premium_members BOOLEAN not null
 );
 
+CREATE TABLE trainers
+(
+  id SERIAL8 primary key,
+  first_name VARCHAR(255) not null,
+  last_name VARCHAR(255) not null,
+  premium_trainer BOOLEAN not null
+);
+
 CREATE TABLE boxers
 (
   id SERIAL8 primary key,
   first_name VARCHAR(255) not null,
   last_name VARCHAR(255) not null,
-  premium_member BOOLEAN not null
+  premium_member BOOLEAN not null,
+  trainer_id INT8 references trainer(id)
 );
 
 CREATE TABLE bookings

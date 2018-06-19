@@ -30,8 +30,8 @@ post('/bookings') do
   @fitness_class = FitnessClass.find(@booking.fitness_class_id())
   @boxer = Boxer.find(@booking.boxer_id())
   return if @fitness_class.capacity == 0
-  if @fitness_class.premium_members == "t" then
-    return if @boxer.premium_member != "t"
+  if @fitness_class.premium_members == true then
+    return if @boxer.premium_member == false
   else
   @fitness_class.reduce_capacity()
   @fitness_class.update()
