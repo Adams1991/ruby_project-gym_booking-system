@@ -28,7 +28,7 @@ fitness_class1 = FitnessClass.new({
 
 fitness_class2 = FitnessClass.new({
   "name" => "Advance Fitness",
-  "capacity" => 1
+  "capacity" => 0
 })
 
 fitness_class1.save()

@@ -15,14 +15,15 @@ attr_accessor(:id, :name, :capacity)
   def save()
     sql = "INSERT INTO fitness_classes
     (
-      name
+      name,
+      capacity
     )
     VALUES
     (
-      $1
+      $1, $2
     )
     RETURNING id"
-    values = [@name]
+    values = [@name, @capacity]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
@@ -71,6 +72,13 @@ attr_accessor(:id, :name, :capacity)
     values = [@id]
     boxer_data = SqlRunner.run(sql, values)
     return Boxer.map_items(boxer_data)
+  end
+
+  def self.find_class_with_space
+    sql = "SELECT *
+           FROM fitness_classes"
+    results = SqlRunner.run( sql )
+    return results.map { |hash| FitnessClass.new( hash ) if hash["capacity"].to_i > 0 }
   end
 
   def add_member(boxer)
