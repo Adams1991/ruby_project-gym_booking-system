@@ -89,7 +89,7 @@ attr_accessor(:id, :first_name, :last_name, :premium_member, :trainer_id)
     WHERE id = $1"
     values = [@trainer_id]
     trainer_data = SqlRunner.run(sql, values)
-    return Trainer.map_items(trainer_data)
+    return Trainer.new(trainer_data.first())
   end
 
   def add_fitness_class(fitness_class)

@@ -1,6 +1,7 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require_relative( '../models/boxer.rb' )
+require_relative( '../models/trainer.rb' )
 also_reload( '../models/*' )
 
 # INDEX
@@ -11,6 +12,7 @@ end
 
 # NEW
 get('/boxers/new') do
+  @trainers = Trainer.all()
   @boxers = Boxer.all()
   erb( :"boxers/new" )
 end
@@ -37,6 +39,7 @@ end
 
 # EDIT
 get('/boxers/:id/edit') do
+  @trainers = Trainer.all()
   @boxer = Boxer.find(params[:id].to_i)
   erb( :"boxers/edit" )
 end
