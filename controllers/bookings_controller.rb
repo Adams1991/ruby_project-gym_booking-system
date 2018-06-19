@@ -45,5 +45,8 @@ get('/bookings/:id/delete') do
 end
 
 post('/bookings/:boxer_id/:fitness_class_id') do
+  @fitness_class = FitnessClass.find(params[:fitness_class_id])
+  @fitness_class.increase_capacity()
+  @fitness_class.update()
   Booking.delete_by_details(params[:boxer_id], params[:fitness_class_id])
 end
