@@ -6,14 +6,17 @@ CREATE TABLE fitness_classes
 (
   id SERIAL8 primary key,
   name VARCHAR(255) not null,
-  capacity INT8
+  capacity INT8,
+  duration VARCHAR(255) not null,
+  premium_members BOOLEAN not null
 );
 
 CREATE TABLE boxers
 (
   id SERIAL8 primary key,
   first_name VARCHAR(255) not null,
-  last_name VARCHAR(255) not null
+  last_name VARCHAR(255) not null,
+  premium_member BOOLEAN not null
 );
 
 CREATE TABLE bookings
