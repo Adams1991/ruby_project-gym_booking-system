@@ -1,16 +1,18 @@
 require_relative('../db/sql_runner')
 require_relative('./booking')
 require_relative('./fitness_class')
+require_relative('./trainer')
 
 class Boxer
 
-attr_accessor(:id, :first_name, :last_name, :premium_member)
+attr_accessor(:id, :first_name, :last_name, :premium_member, :trainer_id)
 
   def initialize(options)
     @id = options['id'].to_i
     @first_name = options['first_name']
     @last_name = options['last_name']
     @premium_member = options['premium_member']
+    @trainer_id = options['trainer_id']
   end
 
   def full_name()
@@ -22,23 +24,24 @@ attr_accessor(:id, :first_name, :last_name, :premium_member)
     (
       first_name,
       last_name,
-      premium_member
+      premium_member,
+      trainer_id
     )
     VALUES
     (
-      $1, $2, $3
+      $1, $2, $3, $4
     )
     RETURNING id"
-    values = [@first_name, @last_name, @premium_member]
+    values = [@first_name, @last_name, @premium_member,@trainer_id]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
 
   def update()
     sql = "UPDATE boxers
-    SET first_name = $1, last_name = $2, premium_member =$3
-    WHERE id = $4"
-    values = [@first_name,@last_name, @premium_member, @id]
+    SET first_name = $1, last_name = $2, premium_member =$3, trainer_id = $4
+    WHERE id = $5"
+    values = [@first_name,@last_name, @premium_member, @trainer_id, @id]
     SqlRunner.run(sql, values)
   end
 
