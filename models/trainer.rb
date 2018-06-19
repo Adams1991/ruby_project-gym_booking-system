@@ -62,11 +62,22 @@ attr_accessor(:id, :first_name, :last_name, :premium_trainer)
   end
 
   def self.find( id )
-    sql = "SELECT * FROM boxers
+    sql = "SELECT * FROM trainers
     WHERE id = $1"
     values = [id]
     results = SqlRunner.run( sql, values )
-    return Trainers.new( results.first )
+    return Trainer.new( results.first )
+  end
+
+  def boxers()
+    sql = "SELECT boxers.*
+    FROM boxers
+    INNER JOIN trainers
+    ON boxers.trainer_id = trainers.id
+    WHERE trainer_id = $1"
+    values = [@id]
+    boxer_data = SqlRunner.run(sql, values)
+    return Boxer.map_items(boxer_data)
   end
 
 
