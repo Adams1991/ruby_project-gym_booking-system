@@ -25,7 +25,7 @@ class TestTrainer < MiniTest::Test
   end
 
   def test_premium_member()
-    result = @trainer.premium_member()
+    result = @trainer.premium_trainer()
     assert_equal(true, result)
   end
 
