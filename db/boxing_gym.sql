@@ -1,7 +1,8 @@
 DROP TABLE bookings;
+DROP TABLE boxers;
 DROP TABLE trainers;
 DROP TABLE fitness_classes;
-DROP TABLE boxers;
+
 
 CREATE TABLE fitness_classes
 (
