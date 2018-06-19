@@ -28,6 +28,7 @@ end
 post('/bookings') do
   @booking = Booking.new(params)
   @fitness_class = FitnessClass.find(@booking.fitness_class_id())
+  return if @fitness_class.capacity == 0
   @fitness_class.reduce_capacity()
   @fitness_class.update()
   @booking.save()

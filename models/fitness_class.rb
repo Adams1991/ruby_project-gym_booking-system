@@ -78,7 +78,7 @@ attr_accessor(:id, :name, :capacity)
     sql = "SELECT *
            FROM fitness_classes"
     results = SqlRunner.run( sql )
-    return results.map { |hash| FitnessClass.new( hash ) if hash["capacity"].to_i > 0 } 
+    return results.map { |hash| FitnessClass.new( hash ) if hash["capacity"].to_i > 0 }
   end
 
   def add_member(boxer)
@@ -86,7 +86,9 @@ attr_accessor(:id, :name, :capacity)
     Booking.new('fitness_class_id' => @id, "boxer_id" => boxer.id ).save()
   end
 
+
   def reduce_capacity
+    return if @capacity == 0
     @capacity -= 1
   end
 
