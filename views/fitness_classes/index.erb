@@ -1,5 +1,6 @@
 <% for fitness_class in @fitness_classes %>
   <p>Name: <%= fitness_class.name() %> </p>
+  <p>Capacity: <%= fitness_class.capacity() %> </p>
   <p> <a href="/fitness_classes/<%= fitness_class.id()  %>/edit">Edit Class Details</a> </p>
   <p> <a href="/fitness_classes/<%= fitness_class.id()  %>/delete">Remove Class</a> </p>
   <p> <a href="/fitness_classes/<%= fitness_class.id()  %>/boxers">Boxers Booked in</a> </p>
