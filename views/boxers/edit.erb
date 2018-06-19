@@ -7,7 +7,14 @@
   <input id="last-name" type="text" name="last_name" value="<%= @boxer.last_name  %>"/>
 
   <label for="premium-member">Premium Member:</label>
-  <input id="premium-member" type="text" name="premium_member" value="<%= @boxer.premium_member  %>"/>
+  <select>
+    <option value="true">
+      true
+    </option>
+    <option value="false">
+      false
+    </option>
+  </select>
 
   <label for="trainer">Assign Trainer:
     <select name="trainer_id">
