@@ -3,7 +3,11 @@
   Select a class:
     <select name="fitness_class_id">
       <% for fitness_class in @fitness_classes %>
+      <% if fitness_class.capacity <= 0 then %>
+      <option value="<%= fitness_class.id() %>"><%= fitness_class.name %>(class full)</option>
+      <% else %>
       <option value="<%= fitness_class.id() %>"><%= fitness_class.name %></option>
+      <% end %>
       <% end %>
     </select>
   </label>

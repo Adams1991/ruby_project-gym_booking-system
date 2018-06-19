@@ -78,7 +78,7 @@ attr_accessor(:id, :name, :capacity)
     sql = "SELECT *
            FROM fitness_classes"
     results = SqlRunner.run( sql )
-    return results.map { |hash| FitnessClass.new( hash ) if hash["capacity"].to_i > 0 }
+    return results.map { |hash| FitnessClass.new( hash ) if hash["capacity"].to_i > 0 } 
   end
 
   def add_member(boxer)
