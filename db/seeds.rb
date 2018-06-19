@@ -32,8 +32,16 @@ boxer2 = Boxer.new({
   "trainer_id" => trainer1.id()
 })
 
+boxer3 = Boxer.new({
+  "first_name" => "Lana",
+  "last_name" => "Smith",
+  "premium_member" => "f",
+  "trainer_id" => trainer1.id()
+})
+
 boxer1.save()
 boxer2.save()
+boxer3.save()
 
 fitness_class1 = FitnessClass.new({
   "name" => "Beginners Fitness",

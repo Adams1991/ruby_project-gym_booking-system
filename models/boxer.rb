@@ -83,6 +83,15 @@ attr_accessor(:id, :first_name, :last_name, :premium_member, :trainer_id)
     return FitnessClass.map_items(fitness_class_data)
   end
 
+  def trainer()
+    sql = "SELECT trainers.*
+    FROM trainers
+    WHERE id = $1"
+    values = [@trainer_id]
+    trainer_data = SqlRunner.run(sql, values)
+    return Trainer.map_items(trainer_data)
+  end
+
   def add_fitness_class(fitness_class)
     Booking.new('fitness_class_id' => @id, "boxer_id" => fitness_class.id ).save()
   end
