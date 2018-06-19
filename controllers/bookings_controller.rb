@@ -36,8 +36,11 @@ end
 
 # DELETE
 get('/bookings/:id/delete') do
-  booking = Booking.find(params[:id].to_i)
-  booking.delete()
+  @booking = Booking.find(params[:id].to_i)
+  @fitness_class = FitnessClass.find(@booking.fitness_class_id())
+  @fitness_class.increase_capacity()
+  @fitness_class.update()
+  @booking.delete()
   erb( :"boxers/destroy" )
 end
 
