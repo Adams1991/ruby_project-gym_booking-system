@@ -26,7 +26,7 @@ CREATE TABLE boxers
   first_name VARCHAR(255) not null,
   last_name VARCHAR(255) not null,
   premium_member BOOLEAN not null,
-  trainer_id INT8 references trainer(id)
+  trainer_id INT8 references trainers(id)
 );
 
 CREATE TABLE bookings

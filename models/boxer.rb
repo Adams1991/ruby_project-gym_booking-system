@@ -11,8 +11,8 @@ attr_accessor(:id, :first_name, :last_name, :premium_member, :trainer_id)
     @id = options['id'].to_i
     @first_name = options['first_name']
     @last_name = options['last_name']
-    @premium_member = options['premium_member']
-    @trainer_id = options['trainer_id']
+    @premium_member = options['premium_member'] == "t" ? true : false
+    @trainer_id = options['trainer_id'].to_i
   end
 
   def full_name()
@@ -32,7 +32,7 @@ attr_accessor(:id, :first_name, :last_name, :premium_member, :trainer_id)
       $1, $2, $3, $4
     )
     RETURNING id"
-    values = [@first_name, @last_name, @premium_member,@trainer_id]
+    values = [@first_name, @last_name, @premium_member, @trainer_id]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end

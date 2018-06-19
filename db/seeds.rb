@@ -1,23 +1,35 @@
+require_relative( "../models/trainer.rb" )
 require_relative( "../models/boxer.rb" )
 require_relative( "../models/fitness_class.rb" )
 require_relative( "../models/booking.rb" )
 require("pry-byebug")
 
-Booking.delete_all()
 Boxer.delete_all()
+Trainer.delete_all()
+Booking.delete_all()
 FitnessClass.delete_all()
+
+trainer1 = Trainer.new({
+  "first_name" => "Abel",
+  "last_name" => "Sanchez",
+  "premium_trainer" => "t"
+  })
+
+trainer1.save
 
 
 boxer1 = Boxer.new({
   "first_name" => "Shannon",
   "last_name" => "Smith",
-  "premium_member" => true
+  "premium_member" => "t",
+  "trainer_id" => trainer1.id()
 })
 
 boxer2 = Boxer.new({
   "first_name" => "Bob",
   "last_name" => "Smith",
-  "premium_member" => false
+  "premium_member" => "f",
+  "trainer_id" => trainer1.id()
 })
 
 boxer1.save()
@@ -27,14 +39,14 @@ fitness_class1 = FitnessClass.new({
   "name" => "Beginners Fitness",
   "capacity" => 34,
   "duration" => "5pm - 7pm",
-  "premium_members" => true
+  "premium_members" => "t"
 })
 
 fitness_class2 = FitnessClass.new({
   "name" => "Advance Fitness",
   "capacity" => 0,
   "duration" => "4pm - 6pm",
-  "premium_members" => false
+  "premium_members" => "f"
 })
 
 fitness_class1.save()
