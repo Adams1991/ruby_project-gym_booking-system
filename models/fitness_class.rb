@@ -30,9 +30,9 @@ attr_accessor(:id, :name, :capacity)
 
   def update()
     sql = "UPDATE fitness_classes
-    SET name = $1
-    WHERE id = $2"
-    values = [@name, @id]
+    SET name = $1, capacity = $2
+    WHERE id = $3"
+    values = [@name,@capacity, @id]
     SqlRunner.run(sql, values)
   end
 
