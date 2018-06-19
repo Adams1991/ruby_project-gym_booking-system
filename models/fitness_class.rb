@@ -4,35 +4,39 @@ require_relative('./fitness_class')
 
 class FitnessClass
 
-attr_accessor(:id, :name, :capacity)
+attr_accessor(:id, :name, :capacity, :duration, :premium_members)
 
   def initialize(options)
     @id = options['id'].to_i
     @name = options['name']
     @capacity = options['capacity'].to_i
+    @duration = options['duration']
+    @premium_members = options['premium_members']
   end
 
   def save()
     sql = "INSERT INTO fitness_classes
     (
       name,
-      capacity
+      capacity,
+      duration,
+      premium_members
     )
     VALUES
     (
-      $1, $2
+      $1, $2, $3, $4
     )
     RETURNING id"
-    values = [@name, @capacity]
+    values = [@name, @capacity, @duration, @premium_members]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
 
   def update()
     sql = "UPDATE fitness_classes
-    SET name = $1, capacity = $2
-    WHERE id = $3"
-    values = [@name,@capacity, @id]
+    SET name = $1, capacity = $2, duration = $3, premium_members =$4
+    WHERE id = $5"
+    values = [@name,@capacity,@duration, @premium_members, @id]
     SqlRunner.run(sql, values)
   end
 

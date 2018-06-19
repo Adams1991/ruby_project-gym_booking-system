@@ -21,23 +21,24 @@ attr_accessor(:id, :first_name, :last_name, :premium_member)
     sql = "INSERT INTO boxers
     (
       first_name,
-      last_name
+      last_name,
+      premium_member
     )
     VALUES
     (
-      $1, $2
+      $1, $2, $3
     )
     RETURNING id"
-    values = [@first_name, @last_name]
+    values = [@first_name, @last_name, @premium_member]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
 
   def update()
     sql = "UPDATE boxers
-    SET first_name = $1, last_name = $2
-    WHERE id = $3"
-    values = [@first_name,@last_name, @id]
+    SET first_name = $1, last_name = $2, premium_member =$3
+    WHERE id = $4"
+    values = [@first_name,@last_name, @premium_member, @id]
     SqlRunner.run(sql, values)
   end
 
