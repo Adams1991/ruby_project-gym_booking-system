@@ -28,16 +28,16 @@ end
 post('/bookings') do
   @booking = Booking.new(params)
   @fitness_class = FitnessClass.find(@booking.fitness_class_id())
-  # @boxer = Boxer.find(@booking.boxer_id())
+  @boxer = Boxer.find(@booking.boxer_id())
   return if @fitness_class.capacity == 0
-  # if @fitness_class.premium_members == true then
-  #   return if @boxer.premium_member != true
-  # else
+  if @fitness_class.premium_members == "t" then
+    return if @boxer.premium_member != "t"
+  else
   @fitness_class.reduce_capacity()
   @fitness_class.update()
   @booking.save()
   erb ( :"bookings/create" )
-  # end
+  end
 end
 
 # DELETE
