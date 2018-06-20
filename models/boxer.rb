@@ -41,7 +41,7 @@ attr_accessor(:id, :first_name, :last_name, :premium_member, :skill_level, :trai
 
   def update()
     sql = "UPDATE boxers
-    SET first_name = $1, last_name = $2, premium_member =$3, skill_level = $4 trainer_id = $5
+    SET first_name = $1, last_name = $2, premium_member =$3, skill_level = $4, trainer_id = $5
     WHERE id = $6"
     values = [@first_name,@last_name, @premium_member, @skill_level, @trainer_id, @id]
     SqlRunner.run(sql, values)
