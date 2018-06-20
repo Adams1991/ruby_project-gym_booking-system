@@ -91,9 +91,11 @@ attr_accessor(:id, :name, :capacity, :duration, :premium_members)
     Booking.new('fitness_class_id' => @id, "boxer_id" => boxer.id ).save()
   end
 
+  def is_full?
+    return @capacity <= 0
+  end
 
   def reduce_capacity
-    return if @capacity == 0
     @capacity -= 1
   end
 
@@ -101,12 +103,15 @@ attr_accessor(:id, :name, :capacity, :duration, :premium_members)
     @capacity += 1
   end
 
-  def check_membership(boxer_id)
+  def create_booking(boxer_id)
   @boxer = Boxer.find(boxer_id)
-    if @premium_members
-      return if !@boxer.premium_member
+    if !is_full? && ((@premium_members && @boxer.premium_member) || (!@premium_members))
+      reduce_capacity()
+      return true
     end
+    return false
   end
+
 
   def self.map_items(fitness_class_data)
     result = fitness_class_data.map { |fitness_class| FitnessClass.new(fitness_class) }
