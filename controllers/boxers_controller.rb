@@ -65,3 +65,13 @@ get('/boxers/:id/booking') do
   @fitness_classes = FitnessClass.all()
   erb( :"boxers/boxer_booking" )
 end
+
+#SKILL_MOT
+get('/boxers/:id/skill_mot') do
+  @boxer = Boxer.find(params[:id].to_i)
+  erb( :"boxers/skill_mot" )
+end
+
+post('/boxers/skill_mot') do
+  return "bla"
+end
