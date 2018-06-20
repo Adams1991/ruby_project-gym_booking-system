@@ -2,6 +2,7 @@ require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require_relative( '../models/boxer.rb' )
 require_relative( '../models/trainer.rb' )
+require_relative( '../models/fitness_class.rb' )
 also_reload( '../models/*' )
 
 # INDEX
@@ -56,4 +57,11 @@ get('/boxers/:id/fitness_classes') do
   @boxer = Boxer.find(params[:id].to_i)
   @fitness_classes = @boxer.fitness_classes()
   erb( :"boxers/fitness_classes" )
+end
+
+#MAKE NEW BOOKING FOR BOXER
+get('/boxers/:id/booking') do
+  @boxer = Boxer.find(params[:id].to_i)
+  @fitness_classes = FitnessClass.all()
+  erb( :"boxers/boxer_booking" )
 end

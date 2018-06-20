@@ -1,6 +1,6 @@
 <% for trainer in @trainers %>
   <p>Name: <%= trainer.full_name() %> </p>
-  <p>Premium Trainer: <%= trainer.premium_trainer() %> </p>
+  <p>Premium Trainer: <%= trainer.convert_boolean() %> </p>
   <p> <a href="/trainers/<%= trainer.id()  %>/edit">Edit Trainer Details</a> </p>
   <p> <a href="/trainers/<%= trainer.id()  %>/delete">Remove Trainer</a> </p>
   <p> <a href="/trainers/<%= trainer.id()  %>/boxers">Boxers Training</a> </p>

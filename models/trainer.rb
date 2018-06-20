@@ -80,6 +80,10 @@ attr_accessor(:id, :first_name, :last_name, :premium_trainer)
     return Boxer.map_items(boxer_data)
   end
 
+  def convert_boolean
+    @premium_trainer == true ? "Yes" : "No"
+  end
+
 
   def self.map_items(trainer_data)
     result = trainer_data.map { |trainer| Trainer.new(trainer) }

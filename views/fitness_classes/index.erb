@@ -2,7 +2,7 @@
   <p>Name: <%= fitness_class.name() %> </p>
   <p>Capacity: <%= fitness_class.capacity() %> </p>
   <p>Duration: <%= fitness_class.duration() %> </p>
-  <p>Premium Members: <%= fitness_class.premium_members() %> </p>
+  <p>Premium Members Only: <%= fitness_class.convert_boolean() %> </p>
   <p>Start Time: <%= fitness_class.start_time()%> </p>
   <p> <a href="/fitness_classes/<%= fitness_class.id()  %>/edit">Edit Class Details</a> </p>
   <p> <a href="/fitness_classes/<%= fitness_class.id()  %>/delete">Remove Class</a> </p>

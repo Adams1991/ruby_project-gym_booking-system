@@ -92,6 +92,10 @@ attr_accessor(:id, :first_name, :last_name, :premium_member, :trainer_id)
     return Trainer.new(trainer_data.first())
   end
 
+  def convert_boolean
+    @premium_member == true ? "Yes" : "No"
+  end
+
   def add_fitness_class(fitness_class)
     Booking.new('fitness_class_id' => @id, "boxer_id" => fitness_class.id ).save()
   end

@@ -1,10 +1,10 @@
 <% for boxer in @boxers %>
   <p>Name: <%= boxer.full_name() %> </p>
-  <p>Premium Member: <%= boxer.premium_member() %> </p>
+  <p>Premium Member: <%= boxer.convert_boolean() %> </p>
   <p>Trainer: <%= boxer.trainer().full_name %> </p>
   <p> <a href="/boxers/<%= boxer.id()  %>/edit">Edit Boxer Details</a> </p>
   <p> <a href="/boxers/<%= boxer.id()  %>/delete">Remove Boxer</a> </p>
   <p> <a href="/boxers/<%= boxer.id()  %>/fitness_classes">Fitness Class In</a> </p>
-  <p> <a href="/bookings/new">Make Booking</a> </p>
+  <p> <a href="/boxers/<%= boxer.id()  %>/booking">Book Class</a> </p>
   <hr />
 <% end %>
