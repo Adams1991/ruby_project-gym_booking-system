@@ -1,13 +1,13 @@
 <form method="post" action="/fitness_classes/<%= @fitness_class.id() %>">
 
   <label for="name">Class Name:</label>
-  <input id="name" type="text" name="name" value="<%= @fitness_class.name  %>"/>
+  <input required id="name" type="text" name="name" value="<%= @fitness_class.name  %>"/>
 
   <label for="capacity">Capacity:</label>
-  <input id="capacity" type="text" name="capacity" value="<%= @fitness_class.capacity  %>"/>
+  <input  required id="capacity" type="text" name="capacity" value="<%= @fitness_class.capacity  %>"/>
 
   <label for="duration">duration:</label>
-  <input id="duration" type="text" name="duration" value="<%= @fitness_class.duration()  %>"/>
+  <input  required id="duration" type="text" name="duration" value="<%= @fitness_class.duration()  %>"/>
 
   <label for="premium-members">Premium Members Only:</label>
   <select name="premium_members">
@@ -18,9 +18,9 @@
       No
     </option>
   </select>
-  
+
   <label for="start_time">Put date and start time:</label>
-    <input type="datetime-local" name="start_time" id="start_time"/>
+    <input  required type="datetime-local" name="start_time" id="start_time"/>
 
 
   <input type="submit" value="Update Class Details">

@@ -1,10 +1,10 @@
 <form method="post" action="/boxers/<%= @boxer.id() %>">
 
   <label for="first-name">First Name:</label>
-  <input id="first-name" type="text" name="first_name" value="<%= @boxer.first_name  %>"/>
+  <input required id="first-name" type="text" name="first_name" value="<%= @boxer.first_name  %>"/>
 
   <label for="last-name">Last Name:</label>
-  <input id="last-name" type="text" name="last_name" value="<%= @boxer.last_name  %>"/>
+  <input required id="last-name" type="text" name="last_name" value="<%= @boxer.last_name  %>"/>
 
   <label for="premium-member">Premium Member:</label>
   <select name="premium_member">

@@ -1,12 +1,12 @@
 <form method="post" action="/fitness_classes">
   <label for="name">Class Name:</label>
-  <input id="name" type="text" name="name"/>
+  <input required id="name" type="text" name="name"/>
 
   <label for="capacity">Capacity:</label>
-  <input id="capacity" type="text" name="capacity"/>
+  <input required id="capacity" type="text" name="capacity"/>
 
   <label for="duration">Duration:</label>
-  <input id="duration" type="text" name="duration"/>
+  <input required id="duration" type="text" name="duration"/>
 
   <label for="premium-member">Premium Member:</label>
   <select name="premium_members">
@@ -19,7 +19,7 @@
   </select>
 
   <label for="start_time">Put date and start time:</label>
-    <input type="datetime-local" name="start_time" id="start_time"/>
+    <input required type="datetime-local" name="start_time" id="start_time"/>
 
   <input type="submit" value="Add Class">
 

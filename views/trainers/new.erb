@@ -1,9 +1,9 @@
 <form method="post" action="/trainers">
   <label for="first-name">First Name:</label>
-  <input id="first-name" type="text" name="first_name"/>
+  <input required id="first-name" type="text" name="first_name"/>
 
   <label for="last-name">Last Name:</label>
-  <input id="last-name" type="text" name="last_name"/>
+  <input required id="last-name" type="text" name="last_name"/>
 
   <label for="premium-trainer">Premium Trainer:</label>
   <select name="premium_trainer">
@@ -14,7 +14,7 @@
       No
     </option>
   </select>
-  
+
   <input type="submit" value="Add Trainer">
 
 </form>

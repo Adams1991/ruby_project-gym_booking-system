@@ -1,10 +1,10 @@
 <form method="post" action="/trainers/<%= @trainer.id() %>">
 
   <label for="first-name">First Name:</label>
-  <input id="first-name" type="text" name="first_name" value="<%= @trainer.first_name  %>"/>
+  <input required id="first-name" type="text" name="first_name" value="<%= @trainer.first_name  %>"/>
 
   <label for="last-name">Last Name:</label>
-  <input id="last-name" type="text" name="last_name" value="<%= @trainer.last_name  %>"/>
+  <input required id="last-name" type="text" name="last_name" value="<%= @trainer.last_name  %>"/>
 
   <label for="premium-trainer">Premium Trainer:</label>
   <select name="premium_trainer">
