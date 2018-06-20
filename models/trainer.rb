@@ -10,7 +10,7 @@ attr_accessor(:id, :first_name, :last_name, :premium_trainer)
     @id = options['id'].to_i
     @first_name = options['first_name']
     @last_name = options['last_name']
-    @premium_trainer = options['premium_trainer'] == "t" ? true : false
+    @premium_trainer = options['premium_trainer'] == "t" || options['premium_trainer'] == "true" ? true : false
   end
 
   def full_name()

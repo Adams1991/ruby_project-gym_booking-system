@@ -7,7 +7,14 @@
   <input id="last-name" type="text" name="last_name" value="<%= @trainer.last_name  %>"/>
 
   <label for="premium-trainer">Premium Trainer:</label>
-  <input id="premium-trainer" type="text" name="premium_trainer" value="<%= @trainer.premium_trainer  %>"/>
+  <select name="premium_trainer">
+    <option value="true">
+      Yes
+    </option>
+    <option value="false">
+      No
+    </option>
+  </select>
 
 
   <input type="submit" value="Update Trainer Details">

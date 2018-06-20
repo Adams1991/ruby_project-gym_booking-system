@@ -9,8 +9,15 @@
   <label for="duration">duration:</label>
   <input id="duration" type="text" name="duration" value="<%= @fitness_class.duration()  %>"/>
 
-  <label for="premium_members">Premium Members Only:</label>
-  <input id="premium_members" type="text" name="premium_members" value="<%= @fitness_class.premium_members  %>"/>
+  <label for="premium-members">Premium Members Only:</label>
+  <select name="premium_members">
+    <option value="true">
+      Yes
+    </option>
+    <option value="false">
+      No
+    </option>
+  </select>
 
 
   <input type="submit" value="Update Class Details">

@@ -11,7 +11,7 @@ attr_accessor(:id, :first_name, :last_name, :premium_member, :trainer_id)
     @id = options['id'].to_i
     @first_name = options['first_name']
     @last_name = options['last_name']
-    @premium_member = options['premium_member'] == "t" ? true : false
+    @premium_member = options['premium_member'] =="t" || options['premium_member'] =="true" ? true : false
     @trainer_id = options['trainer_id'].to_i
   end
 

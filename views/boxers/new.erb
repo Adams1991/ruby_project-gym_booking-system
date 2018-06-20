@@ -5,14 +5,16 @@
   <label for="last-name">Last Name:</label>
   <input id="last-name" type="text" name="last_name"/>
 
-  <label for="premium-member">Premium Member:
-    <select name="trainer_id">
-      <% for boxer in @boxers %>
-      <option value="<%= boxer.premium_member %>"><%= boxer.premium_member %>
-      </option>
-      <% end %>
-    </select>
-  </label>
+  <label for="premium-member">Premium Member:</label>
+  <select name="premium_member">
+    <option value="true">
+      Yes
+    </option>
+    <option value="false">
+      No
+    </option>
+  </select>
+
 
 
 

@@ -11,7 +11,7 @@ attr_accessor(:id, :name, :capacity, :duration, :premium_members)
     @name = options['name']
     @capacity = options['capacity'].to_i
     @duration = options['duration']
-    @premium_members = options['premium_members'] == "t" ? true : false
+    @premium_members = options['premium_members'] == "t" || options['premium_members'] == "true" ? true : false
   end
 
   def save()
