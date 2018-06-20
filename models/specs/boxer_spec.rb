@@ -4,7 +4,7 @@ require_relative("../boxer")
 class TestBoxer < MiniTest::Test
 
   def setup
-    options = {"id" => 1, "first_name" => "John", "last_name" => "Adams", "premium_member" => true, "trainer_id" => 3}
+    options = {"id" => 1, "first_name" => "John", "last_name" => "Adams", "premium_member" => "t", "skill_level" => "Novice", "trainer_id" => 3}
 
     @boxer = Boxer.new(options)
   end
@@ -32,6 +32,11 @@ class TestBoxer < MiniTest::Test
   def test_trainer_id()
     result = @boxer.trainer_id()
     assert_equal(3, result)
+  end
+
+  def test_skill_level()
+    result = @boxer.skill_level()
+    assert_equal("Novice", result)
   end
 
   def test_full_name

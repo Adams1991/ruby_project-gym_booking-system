@@ -5,13 +5,14 @@ require_relative('./trainer')
 
 class Boxer
 
-attr_accessor(:id, :first_name, :last_name, :premium_member, :trainer_id)
+attr_accessor(:id, :first_name, :last_name, :premium_member, :skill_level, :trainer_id)
 
   def initialize(options)
     @id = options['id'].to_i
     @first_name = options['first_name']
     @last_name = options['last_name']
     @premium_member = options['premium_member'] =="t" || options['premium_member'] =="true" ? true : false
+    @skill_level = options['skill_level']
     @trainer_id = options['trainer_id'].to_i
   end
 
@@ -25,23 +26,24 @@ attr_accessor(:id, :first_name, :last_name, :premium_member, :trainer_id)
       first_name,
       last_name,
       premium_member,
+      skill_level,
       trainer_id
     )
     VALUES
     (
-      $1, $2, $3, $4
+      $1, $2, $3, $4, $5
     )
     RETURNING id"
-    values = [@first_name, @last_name, @premium_member, @trainer_id]
+    values = [@first_name, @last_name, @premium_member, @skill_level, @trainer_id]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
 
   def update()
     sql = "UPDATE boxers
-    SET first_name = $1, last_name = $2, premium_member =$3, trainer_id = $4
-    WHERE id = $5"
-    values = [@first_name,@last_name, @premium_member, @trainer_id, @id]
+    SET first_name = $1, last_name = $2, premium_member =$3, skill_level = $4 trainer_id = $5
+    WHERE id = $6"
+    values = [@first_name,@last_name, @premium_member, @skill_level, @trainer_id, @id]
     SqlRunner.run(sql, values)
   end
 

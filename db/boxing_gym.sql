@@ -28,7 +28,7 @@ CREATE TABLE boxers
   first_name VARCHAR(255) not null,
   last_name VARCHAR(255) not null,
   premium_member BOOLEAN not null,
-  skill/health_mot VARCHAR(255),
+  skill_level VARCHAR(255) not null,
   trainer_id INT8 references trainers(id) ON DELETE CASCADE
 );
 

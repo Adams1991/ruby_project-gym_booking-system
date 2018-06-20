@@ -22,6 +22,7 @@ boxer1 = Boxer.new({
   "first_name" => "Shannon",
   "last_name" => "Smith",
   "premium_member" => "t",
+  "skill_level" => "Professional",
   "trainer_id" => trainer1.id()
 })
 
@@ -29,6 +30,7 @@ boxer2 = Boxer.new({
   "first_name" => "Bob",
   "last_name" => "Smith",
   "premium_member" => "f",
+  "skill_level" => "Novice",
   "trainer_id" => trainer1.id()
 })
 
@@ -36,6 +38,7 @@ boxer3 = Boxer.new({
   "first_name" => "Lana",
   "last_name" => "Smith",
   "premium_member" => "f",
+  "skill_level" => "Professional",
   "trainer_id" => trainer1.id()
 })
 
