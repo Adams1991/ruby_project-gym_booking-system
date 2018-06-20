@@ -47,9 +47,10 @@ get('/bookings/:id/delete') do
   erb( :"boxers/destroy" )
 end
 
-post('/bookings/:boxer_id/:fitness_class_id') do
+#DELETE VIA BOXER
+post('/bookings/:fitness_class_id/:boxer_id') do
   @fitness_class = FitnessClass.find(params[:fitness_class_id])
   @fitness_class.increase_capacity()
   @fitness_class.update()
-  Booking.delete_by_details(params[:boxer_id], params[:fitness_class_id])
+  Booking.delete_by_details(params[:fitness_class_id],params[:boxer_id] )
 end
