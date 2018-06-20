@@ -102,6 +102,10 @@ attr_accessor(:id, :first_name, :last_name, :premium_member, :skill_level, :trai
     Booking.new('fitness_class_id' => @id, "boxer_id" => fitness_class.id ).save()
   end
 
+  def get_skill_array(params)
+    return params.values_at("footwork", "padwork", "fitness", "power", "defense" )
+  end
+
   def get_skill_score(skill_test_array)
     skill_score = 0
     skill_test_array.each { |attribute| if attribute >= 5 then skill_score += 2 end}
