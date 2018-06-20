@@ -47,13 +47,15 @@ fitness_class1 = FitnessClass.new({
   "name" => "Beginners Fitness",
   "capacity" => 34,
   "duration" => "5pm - 7pm",
+  "start_time" => "2018-08-16 14:00",
   "premium_members" => "t"
 })
 
 fitness_class2 = FitnessClass.new({
   "name" => "Advance Fitness",
   "capacity" => 0,
-  "duration" => "4pm - 6pm",
+  "duration" => "2 hours",
+  "start_time" => "2018-08-16 18:00",
   "premium_members" => "f"
 })
 

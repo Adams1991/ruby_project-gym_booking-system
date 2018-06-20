@@ -9,7 +9,8 @@ CREATE TABLE fitness_classes
   id SERIAL8 primary key,
   name VARCHAR(255) not null,
   capacity INT8,
-  duration TIMESTAMP not null,
+  duration VARCHAR(255) not null,
+  start_time TIMESTAMP,
   premium_members BOOLEAN not null
 );
 
