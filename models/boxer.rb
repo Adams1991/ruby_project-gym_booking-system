@@ -102,6 +102,17 @@ attr_accessor(:id, :first_name, :last_name, :premium_member, :skill_level, :trai
     Booking.new('fitness_class_id' => @id, "boxer_id" => fitness_class.id ).save()
   end
 
+  def assign_skill_level(fitness_score)
+    if fitness_score >= 7
+      @skill_level = "Professional"
+    elsif fitness_score >= 5
+      @skill_level = "Amatuer"
+    else
+      @skill_level = "Novice"
+    end
+    update()
+  end
+
 
   def self.map_items(boxer_data)
     result = boxer_data.map { |boxer| Boxer.new(boxer) }
