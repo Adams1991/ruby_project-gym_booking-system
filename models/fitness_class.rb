@@ -114,6 +114,10 @@ attr_accessor(:id, :name, :capacity, :duration,:start_time, :premium_members)
     return false
   end
 
+  def convert_boolean
+    @premium_members == true ? "Yes" : "No"
+  end
+
 
   def self.map_items(fitness_class_data)
     result = fitness_class_data.map { |fitness_class| FitnessClass.new(fitness_class) }
