@@ -108,7 +108,7 @@ attr_accessor(:id, :first_name, :last_name, :premium_member, :skill_level, :trai
 
   def get_skill_score(skill_array)
     skill_score = 0
-    skill_array.each { |attribute| if attribute >= 5 then skill_score += 2 end}
+    skill_array.each { |attribute| if attribute.to_i >= 5 then skill_score += 2 end}
     return skill_score
   end
 

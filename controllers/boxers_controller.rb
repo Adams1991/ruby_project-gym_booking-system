@@ -68,12 +68,14 @@ end
 
 #SKILL_MOT
 get('/boxers/:id/skill_mot') do
+  @boxer = Boxer.find(params[:id].to_i)
   erb( :"boxers/skill_mot" )
 end
 
-post('/boxers/skill_mot') do
+post('/boxers/:id/skill_mot') do
   @boxer = Boxer.find(params[:id].to_i)
   @skill_array = @boxer.get_skill_array(params)
   @skill_score = @boxer.get_skill_score(@skill_array)
   @boxer.assign_skill_level(@skill_score)
+  redirect to '/boxers'
 end
