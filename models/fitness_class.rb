@@ -5,13 +5,14 @@ require_relative('./boxer')
 
 class FitnessClass
 
-attr_accessor(:id, :name, :capacity, :duration, :premium_members)
+attr_accessor(:id, :name, :capacity, :duration,:start_time, :premium_members)
 
   def initialize(options)
     @id = options['id'].to_i
     @name = options['name']
     @capacity = options['capacity'].to_i
     @duration = options['duration']
+    @start_time = options['start_time']
     @premium_members = options['premium_members'] == "t" || options['premium_members'] == "true" ? true : false
   end
 
@@ -21,23 +22,24 @@ attr_accessor(:id, :name, :capacity, :duration, :premium_members)
       name,
       capacity,
       duration,
+      start_time,
       premium_members
     )
     VALUES
     (
-      $1, $2, $3, $4
+      $1, $2, $3, $4, $5
     )
     RETURNING id"
-    values = [@name, @capacity, @duration, @premium_members]
+    values = [@name, @capacity, @duration,@start_time, @premium_members]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
 
   def update()
     sql = "UPDATE fitness_classes
-    SET name = $1, capacity = $2, duration = $3, premium_members =$4
-    WHERE id = $5"
-    values = [@name,@capacity,@duration, @premium_members, @id]
+    SET name = $1, capacity = $2, duration = $3, start_time = $4, premium_members =$5
+    WHERE id = $6"
+    values = [@name,@capacity,@duration, @start_time, @premium_members, @id]
     SqlRunner.run(sql, values)
   end
 
