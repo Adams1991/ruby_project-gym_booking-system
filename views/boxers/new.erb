@@ -19,7 +19,7 @@
 
 
   <label for="trainer">Assign Trainer:
-    <select name="trainer_id">
+    <select required name="trainer_id">
       <% for trainer in @trainers %>
       <option value="<%= trainer.id() %>"><%= trainer.full_name %>
       </option>
