@@ -29,9 +29,9 @@ post('/bookings') do
   @booking = Booking.new(params)
   @fitness_class = FitnessClass.find(@booking.fitness_class_id())
   @boxer = Boxer.find(@booking.boxer_id())
-  if @fitness_class.premium_members
-    return if !@boxer.premium_member
-  else
+  # if @fitness_class.premium_members
+  #   return if !@boxer.premium_member
+  # else
   @fitness_class.reduce_capacity()
   @fitness_class.update()
   @booking.save()

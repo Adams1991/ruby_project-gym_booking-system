@@ -1,6 +1,7 @@
 require_relative('../db/sql_runner')
 require_relative('./booking')
 require_relative('./fitness_class')
+require_relative('./boxer')
 
 class FitnessClass
 
@@ -98,6 +99,13 @@ attr_accessor(:id, :name, :capacity, :duration, :premium_members)
 
   def increase_capacity
     @capacity += 1
+  end
+
+  def check_membership(boxer_id)
+  @boxer = Boxer.find(boxer_id)
+    if @premium_members
+      return if !@boxer.premium_member
+    end
   end
 
   def self.map_items(fitness_class_data)
