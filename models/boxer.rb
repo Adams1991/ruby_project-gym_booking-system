@@ -28,23 +28,24 @@ attr_accessor(:id, :first_name, :last_name, :premium_member, :skill_level, :phot
       last_name,
       premium_member,
       skill_level,
+      photo,
       trainer_id
     )
     VALUES
     (
-      $1, $2, $3, $4, $5
+      $1, $2, $3, $4, $5, $6
     )
     RETURNING id"
-    values = [@first_name, @last_name, @premium_member, @skill_level, @trainer_id]
+    values = [@first_name, @last_name, @premium_member, @skill_level, @photo, @trainer_id]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
 
   def update()
     sql = "UPDATE boxers
-    SET first_name = $1, last_name = $2, premium_member =$3, skill_level = $4, trainer_id = $5
-    WHERE id = $6"
-    values = [@first_name,@last_name, @premium_member, @skill_level, @trainer_id, @id]
+    SET first_name = $1, last_name = $2, premium_member =$3, skill_level = $4, photo = $5, trainer_id = $6
+    WHERE id = $7"
+    values = [@first_name,@last_name, @premium_member, @skill_level, @photo, @trainer_id, @id]
     SqlRunner.run(sql, values)
   end
 
