@@ -97,7 +97,7 @@ attr_accessor(:id, :first_name, :last_name, :premium_member, :skill_level, :phot
   end
 
   def convert_boolean
-    @premium_member == true ? "Yes" : "No"
+    @premium_member ? "Yes" : "No"
   end
 
   def add_fitness_class(fitness_class)

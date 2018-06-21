@@ -115,7 +115,7 @@ attr_accessor(:id, :name, :capacity, :duration,:start_time, :premium_members)
   end
 
   def convert_boolean
-    @premium_members == true ? "Yes" : "No"
+    @premium_members ? "Yes" : "No"
   end
 
 

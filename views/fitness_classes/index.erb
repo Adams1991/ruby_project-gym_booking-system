@@ -1,4 +1,4 @@
-<a class="button" href="/fitness_classes/new">Add New Class</a>
+
 
 <% for fitness_class in @fitness_classes %>
   <p>Name: <%= fitness_class.name() %> </p>
@@ -6,8 +6,15 @@
   <p>Duration: <%= fitness_class.duration() %> </p>
   <p>Premium Members Only: <%= fitness_class.convert_boolean() %> </p>
   <p>Start Time: <%= fitness_class.start_time()%> </p>
-  <p> <a class="button" href="/fitness_classes/<%= fitness_class.id()  %>/edit">Edit Class Details</a> </p>
-  <p> <a class="button" href="/fitness_classes/<%= fitness_class.id()  %>/delete">Remove Class</a> </p>
-  <p> <a class="button" href="/fitness_classes/<%= fitness_class.id()  %>/boxers">Boxers Booked in</a> </p>
+  <ul>
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Options</a>
+      <div class="dropdown-content">
+        <a class="button" href="/fitness_classes/<%= fitness_class.id()  %>/edit">Edit Class Details</a>
+        <a class="button" href="/fitness_classes/<%= fitness_class.id()  %>/delete">Remove Class</a>
+        <a class="button" href="/fitness_classes/<%= fitness_class.id()  %>/boxers">Boxers Booked in</a>
+      </div>
+    </li>
+  </ul>
   <hr />
 <% end %>

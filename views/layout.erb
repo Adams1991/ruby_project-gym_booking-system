@@ -8,14 +8,38 @@
     <link rel="stylesheet" type="text/css" href="/styles/tables.css">
     <title>Taylor ABC</title>
   </head>
-  <body>
+  <body background="/images/background2.jpg">
     <nav>
       <ul>
         <li> <a href="/">Home Page</a> </li>
-        <li> <a href="/boxers">Boxers</a> </li>
-        <li> <a href="/fitness_classes">Classes</a> </li>
-        <li> <a href="/bookings">Bookings</a> </li>
-        <li> <a href="/trainers">Trainers</a> </li>
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn">Boxers</a>
+          <div class="dropdown-content">
+            <a href="/boxers">Boxers Index</a>
+            <a href="/boxers/new">Register Boxer</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn">Classes</a>
+          <div class="dropdown-content">
+            <a href="/fitness_classes">Classes Index</a>
+            <a href="/fitness_classes/new">Add New Class</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn">Bookings</a>
+          <div class="dropdown-content">
+            <a href="/bookings/new">Make Booking</a>
+            <a href="/bookings">Booking Index </a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn">Trainers</a>
+          <div class="dropdown-content">
+             <a href="/trainers">Index Trainers</a>
+            <a href="/trainers/new"> Add Trainers</a>
+          </div>
+        </li>
       </ul>
     </nav>
     <%= yield  %>

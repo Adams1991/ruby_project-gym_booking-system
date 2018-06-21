@@ -1,5 +1,3 @@
-<a class="button" href="/bookings/new">Make Booking</a>
-
 <% for booking in @bookings %>
   <p>Boxer Detail: <%= booking.boxer().full_name() %> </p>
   <p>Class Detail: <%= booking.fitness_class().name() %> </p>

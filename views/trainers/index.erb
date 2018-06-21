@@ -1,10 +1,15 @@
- <a class="button" href="/trainers/new"> Add Trainers</a>
-
-<% for trainer in @trainers %>
+ <% for trainer in @trainers %>
   <p>Name: <%= trainer.full_name() %> </p>
   <p>Premium Trainer: <%= trainer.convert_boolean() %> </p>
-  <p> <a class="button" href="/trainers/<%= trainer.id()  %>/edit">Edit Trainer Details</a> </p>
-  <p> <a class="button" href="/trainers/<%= trainer.id()  %>/delete">Remove Trainer</a> </p>
-  <p> <a class="button" href="/trainers/<%= trainer.id()  %>/boxers">Boxers Training</a> </p>
+  <ul>
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Options</a>
+      <div class="dropdown-content">
+        <a href="/trainers/<%= trainer.id()  %>/edit">Edit Trainer Details</a>
+        <a href="/trainers/<%= trainer.id()  %>/delete">Remove Trainer</a>
+        <a href="/trainers/<%= trainer.id()  %>/boxers">Boxers Training</a>
+      </div>
+    </li>
+  </ul>
   <hr />
 <% end %>
