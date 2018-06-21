@@ -30,8 +30,8 @@ end
 
 # DELETE
 get('/fitness_classes/:id/delete') do
-  fitness_class = FitnessClass.find(params[:id].to_i)
-  fitness_class.delete()
+  @fitness_class = FitnessClass.find(params[:id].to_i)
+  @fitness_class.delete()
   erb( :"fitness_classes/destroy" )
 end
 
@@ -45,7 +45,7 @@ end
 post('/fitness_classes/:id') do
   @fitness_class = FitnessClass.new(params)
   @fitness_class.update()
-  erb( :"fitness_classes/update")
+  redirect('/fitness_classes')
 end
 
 #BOXERS IN CLASS

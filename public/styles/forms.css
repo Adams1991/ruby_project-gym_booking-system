@@ -12,13 +12,17 @@ label {
 }
 
 input[type=submit] {
-   background-color: black;
-   color: white;
-   padding: 12px 20px;
-   border: none;
-   border-radius: 4px;
-   cursor: pointer;
-   float: right;
+  background:grey;
+  color:#fff;
+  border:none;
+  position:relative;
+  height:60px;
+  font-size:1.6em;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+  margin: 20px;
 }
 
 input[type=submit]:hover {

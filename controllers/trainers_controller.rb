@@ -30,8 +30,8 @@ end
 
 # DELETE
 get('/trainers/:id/delete') do
-  trainer = Trainer.find(params[:id].to_i)
-  trainer.delete()
+  @trainer = Trainer.find(params[:id].to_i)
+  @trainer.delete()
   erb( :"trainers/destroy" )
 end
 
@@ -45,7 +45,7 @@ end
 post('/trainers/:id') do
   @trainer = Trainer.new(params)
   @trainer.update()
-  erb( :"trainers/update")
+  redirect('/trainers')
 end
 
 #BOXERS IN CLASS

@@ -1,22 +1,20 @@
-
-
 <% for boxer in @boxers %>
+<ul>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Options</a>
+    <div class="dropdown-content">
+      <a class="button" href="/boxers/<%= boxer.id()  %>/edit">Edit Boxer Details</a>
+      <a class="button" href="/boxers/<%= boxer.id()  %>/skill_mot">Do Skill assessment</a>
+      <a class="button" href="/boxers/<%= boxer.id()  %>/delete">Remove Boxer</a>
+      <a class="button" href="/boxers/<%= boxer.id()  %>/fitness_classes">Fitness Classes Booked</a>
+      <a class="button" href="/boxers/<%= boxer.id()  %>/booking">Book Class</a>
+    </div>
+  </li>
+</ul>
+  <img class="img" src= "<%= boxer.photo %>" alt="<%= boxer.full_name%> Photo" >
   <p>Name: <%= boxer.full_name() %> </p>
   <p>Premium Member: <%= boxer.convert_boolean() %> </p>
   <p>Trainer: <%= boxer.trainer().full_name %> </p>
   <p>Skill Level: <%= boxer.skill_level %> </p>
-  <img class="img" src= "<%= boxer.photo %>" alt="<%= boxer.full_name%> Photo" >
-  <ul>
-    <li class="dropdown">
-      <a href="javascript:void(0)" class="dropbtn">Options</a>
-      <div class="dropdown-content">
-        <a href="/boxers/<%= boxer.id()  %>/edit">Edit Boxer Details</a>
-        <a href="/boxers/<%= boxer.id()  %>/skill_mot">Do Skill assessment</a> </p>
-        <a href="/boxers/<%= boxer.id()  %>/delete">Remove Boxer</a>
-        <a href="/boxers/<%= boxer.id()  %>/fitness_classes">Fitness Classes Booked</a>
-        <a href="/boxers/<%= boxer.id()  %>/booking">Book Class</a> </p>
-      </div>
-    </li>
-  </ul>
-  <hr />
+    <hr>
 <% end %>

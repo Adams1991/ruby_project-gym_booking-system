@@ -50,13 +50,16 @@ li.dropdown {
 }
 
 .img {
-    position: relative;
-    float: left;
     width:  200px;
     height: 200px;
-    background-position: 50% 50%;
-    background-repeat:   no-repeat;
-    background-size:     cover;
+    margin: 30px;
+    border-style: solid;
+    border-color: white;
+}
+
+.background {
+  background-color: black;
+
 }
 
 p { color: white;
@@ -64,4 +67,10 @@ p { color: white;
 
 label {
   color: white;
+}
+
+nav {
+ margin: 10px;
+
+
 }

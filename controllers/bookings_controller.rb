@@ -33,7 +33,7 @@ post('/bookings') do
     @booking.save()
     erb ( :"bookings/create" )
   else
-
+    erb ( :"bookings/not_created" )
   end
 end
 
@@ -44,7 +44,7 @@ get('/bookings/:id/delete') do
   @fitness_class.increase_capacity()
   @fitness_class.update()
   @booking.delete()
-  erb( :"boxers/destroy" )
+  erb( :"bookings/destroy" )
 end
 
 #DELETE VIA BOXER
