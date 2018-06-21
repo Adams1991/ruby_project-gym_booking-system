@@ -5,7 +5,7 @@ require_relative('./trainer')
 
 class Boxer
 
-attr_accessor(:id, :first_name, :last_name, :premium_member, :skill_level, :trainer_id)
+attr_accessor(:id, :first_name, :last_name, :premium_member, :skill_level, :photo, :trainer_id)
 
   def initialize(options)
     @id = options['id'].to_i
@@ -13,6 +13,7 @@ attr_accessor(:id, :first_name, :last_name, :premium_member, :skill_level, :trai
     @last_name = options['last_name']
     @premium_member = options['premium_member'] =="t" || options['premium_member'] =="true" ? true : false
     @skill_level = options['skill_level']
+    @photo = options['photo']
     @trainer_id = options['trainer_id'].to_i
   end
 
