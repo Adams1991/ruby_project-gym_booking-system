@@ -23,7 +23,7 @@ boxer1 = Boxer.new({
   "last_name" => "Smith",
   "premium_member" => "t",
   "skill_level" => "Professional",
-  "photo" => "/images/Shannons_picture.jpg",
+  "photo" => "/images/Shannons_picture.jpeg",
   "trainer_id" => trainer1.id()
 })
 
@@ -32,7 +32,7 @@ boxer2 = Boxer.new({
   "last_name" => "Smith",
   "premium_member" => "f",
   "skill_level" => "Novice",
-  "photo" => "/images/Bob_picture.jpg",
+  "photo" => "/images/Bob_picture.jpeg",
   "trainer_id" => trainer1.id()
 })
 
@@ -41,7 +41,7 @@ boxer3 = Boxer.new({
   "last_name" => "Smith",
   "premium_member" => "f",
   "skill_level" => "Professional",
-  "photo" => "/images/Lana_picture.jpg",
+  "photo" => "/images/Lana_picture.jpeg",
   "trainer_id" => trainer1.id()
 })
 

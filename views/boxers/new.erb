@@ -15,9 +15,6 @@
     </option>
   </select>
 
-
-
-
   <label for="trainer">Assign Trainer:
     <select required name="trainer_id">
       <% for trainer in @trainers %>
@@ -26,6 +23,9 @@
       <% end %>
     </select>
   </label>
+
+  <input hidden id="skill-level" type="text" name="skill_level" value="Not Assessed Yet"/>
+  <input hidden id="photo" type="text" name="photo" value="/images/holder_image.png"/>
 
 
   <input type="submit" value="Add Boxer">
