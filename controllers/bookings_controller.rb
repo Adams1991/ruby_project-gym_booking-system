@@ -53,4 +53,5 @@ post('/bookings/:fitness_class_id/:boxer_id') do
   @fitness_class.increase_capacity()
   @fitness_class.update()
   Booking.delete_by_details(params[:fitness_class_id],params[:boxer_id] )
+  redirect to '/boxers'
 end

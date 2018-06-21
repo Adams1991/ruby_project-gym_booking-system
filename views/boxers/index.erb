@@ -1,10 +1,11 @@
 <% for boxer in @boxers %>
+<hr>
 <ul>
   <li class="dropdown">
     <a href="javascript:void(0)" class="dropbtn">Options</a>
     <div class="dropdown-content">
       <a class="button" href="/boxers/<%= boxer.id()  %>/edit">Edit Boxer Details</a>
-      <a class="button" href="/boxers/<%= boxer.id()  %>/skill_mot">Do Skill assessment</a>
+      <a class="button" href="/boxers/<%= boxer.id()  %>/skill_mot">Do Skill Assessment</a>
       <a class="button" href="/boxers/<%= boxer.id()  %>/delete">Remove Boxer</a>
       <a class="button" href="/boxers/<%= boxer.id()  %>/fitness_classes">Fitness Classes Booked</a>
       <a class="button" href="/boxers/<%= boxer.id()  %>/booking">Book Class</a>

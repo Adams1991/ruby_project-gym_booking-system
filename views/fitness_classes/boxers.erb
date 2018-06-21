@@ -1,5 +1,7 @@
 <% for boxer in @boxers %>
   <p>Name: <%= boxer.full_name() %> </p>
+  <p>Skill Level: <%= boxer.skill_level()%> </p>
+  <p>Premium Member: <%= boxer.convert_boolean() %> </p>
   <form method="post" action='/bookings/<%=@fitness_class.id()%>/<%=boxer.id()%>'>
 
     <input type="submit" value="Remove Booking">

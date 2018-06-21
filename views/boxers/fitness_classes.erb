@@ -1,5 +1,7 @@
 <% for fitness_class in @fitness_classes %>
   <p>Name: <%= fitness_class.name() %> </p>
+  <p>Start Time: <%= fitness_class.start_time %> </p>
+  <p>Duration: <%= fitness_class.duration %> </p>
   <form method="post" action='/bookings/<%=fitness_class.id()%>/<%=@boxer.id()%>'>
 
     <input type="submit" value="Remove Booking">
