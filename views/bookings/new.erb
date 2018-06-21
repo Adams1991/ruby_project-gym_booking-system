@@ -1,7 +1,8 @@
 <form action="/bookings" method="post">
   <label>
   Select a class:
-    <select required name="fitness_class_id">
+    <select required oninvalid="this.setCustomValidity('Can't make a booking without a fitness class)"
+    oninput="this.setCustomValidity('')" name="fitness_class_id">
       <% for fitness_class in @fitness_classes %>
       <% if fitness_class.is_full? then %>
       <% else %>
@@ -13,7 +14,8 @@
 
   <label>
   Select a boxer:
-    <select required name="boxer_id">
+    <select required oninvalid="this.setCustomValidity('Can't make a booking without a boxer)"
+    oninput="this.setCustomValidity('')"  name="boxer_id">
       <% for boxer in @boxers %>
       <option value="<%= boxer.id() %>"><%= boxer.full_name() %></option>
       <% end %>
