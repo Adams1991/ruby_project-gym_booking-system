@@ -33,8 +33,8 @@ end
 
 # DELETE
 get('/boxers/:id/delete') do
-  boxer = Boxer.find(params[:id].to_i)
-  boxer.delete()
+  @boxer = Boxer.find(params[:id].to_i)
+  @boxer.delete()
   erb( :"boxers/destroy" )
 end
 
@@ -49,7 +49,7 @@ end
 post('/boxers/:id') do
   @boxer = Boxer.new(params)
   @boxer.update()
-  erb( :"boxers/update" )
+  redirect('/boxers')
 end
 
 #CLASSES BOOKED
