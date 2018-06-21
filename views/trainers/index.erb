@@ -1,3 +1,5 @@
+    <li> <a href="/trainers/new"> Add Trainers</a> </li>
+
 <% for trainer in @trainers %>
   <p>Name: <%= trainer.full_name() %> </p>
   <p>Premium Trainer: <%= trainer.convert_boolean() %> </p>
