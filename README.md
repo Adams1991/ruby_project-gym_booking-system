@@ -71,7 +71,7 @@ Remember to gather evidence for your PDA this week. This should only take 5 minu
 * Go to your [PDA Checklist](https://github.com/codeclan/pda/blob/master/Student%20Checklist/Student%20Checklist.pdf)
 * Submit your PDA evidence (screenshots, etc.) to your own PDA repo
 
-### Gym Breif
+### Gym Brief
 
 A local gym has asked you to build a piece of software to help them to manage memberships, and register members for classes.
 
