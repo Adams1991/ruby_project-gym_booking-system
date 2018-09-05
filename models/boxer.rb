@@ -101,7 +101,7 @@ attr_accessor(:id, :first_name, :last_name, :premium_member, :skill_level, :phot
   end
 
   def add_fitness_class(fitness_class)
-    Booking.new('fitness_class_id' => @id, "boxer_id" => fitness_class.id ).save()
+    Booking.new('fitness_class_id' => fitness_class.id , "boxer_id" => @id ).save()
   end
 
   def get_skill_array(params)
