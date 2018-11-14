@@ -36,8 +36,6 @@ GEM
 
 PLATFORMS
   java
-  ruby
-  x86_64-linux
 
 DEPENDENCIES
   minitest
