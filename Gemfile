@@ -1,5 +1,10 @@
-# define our source to look for gems
-source "http://rubygems.org/"
+source "https://rubygems.org"
 
-# declare the sinatra dependency
-gem "sinatra" 
+git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
+
+gem 'sinatra'
+gem 'sinatra-contrib'
+gem 'pry'
+gem 'pry-byebug'
+gem 'pg'
+gem 'minitest'
