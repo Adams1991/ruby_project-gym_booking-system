@@ -3,7 +3,7 @@ require( 'sinatra/contrib/all' )
 require_relative( '../models/boxer.rb' )
 require_relative( '../models/fitness_class.rb' )
 require_relative( '../models/booking.rb' )
-also_reload( '../models/*' )
+# also_reload( '../models/*' )
 
 # INDEX
 get('/bookings') do

@@ -1,7 +1,7 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require_relative( '../models/trainer.rb' )
-also_reload( '../models/*' )
+# also_reload( '../models/*' )
 
 
 # INDEX

@@ -2,7 +2,7 @@ require_relative( "../models/trainer.rb" )
 require_relative( "../models/boxer.rb" )
 require_relative( "../models/fitness_class.rb" )
 require_relative( "../models/booking.rb" )
-require("pry-byebug")
+# require("pry-byebug")
 
 Boxer.delete_all()
 Trainer.delete_all()
@@ -90,5 +90,5 @@ booking1.save()
 booking2.save()
 booking3.save()
 
-binding.pry
+# binding.pry
 nil
