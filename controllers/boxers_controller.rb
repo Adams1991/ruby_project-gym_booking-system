@@ -1,5 +1,5 @@
 require( 'sinatra' )
-require( 'sinatra/contrib/all' )
+require( 'sinatra/contrib/all' ) if development?
 require_relative( '../models/boxer.rb' )
 require_relative( '../models/trainer.rb' )
 require_relative( '../models/fitness_class.rb' )
